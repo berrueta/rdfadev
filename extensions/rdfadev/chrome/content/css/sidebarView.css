@@ -1,0 +1,201 @@
+.cargando 
+{
+  background: #FFF url("chrome://rdfadev/content/img/ajax-loader-tree.gif") center center no-repeat;
+}
+
+treechildren::-moz-tree-line 
+{
+  border: 1px solid LightGrey;
+  visibility: visible;
+}
+
+treechildren::-moz-tree-cell-text(errortext) 
+{
+  color: Black;
+}
+
+treechildren::-moz-tree-cell-text(errortext, selected, focus) 
+{
+  color: White;
+}
+
+treechildren::-moz-tree-cell-text(numbertext) 
+{
+  color: Black;
+}
+
+treechildren::-moz-tree-cell-text(numbertext, selected, focus) 
+{
+  color: White;
+}
+
+treechildren::-moz-tree-cell-text(uritext) 
+{
+  color: Blue;
+}
+
+treechildren::-moz-tree-cell-text(uritext, selected, focus) 
+{
+  color: White;
+}
+
+treechildren::-moz-tree-cell-text(curietext) 
+{
+  color: Fuchsia;
+}
+
+treechildren::-moz-tree-cell-text(curietext, selected, focus) 
+{
+  color: White;
+}
+
+treechildren::-moz-tree-cell-text(literaltext) 
+{
+  color: Darkorange;
+}
+
+treechildren::-moz-tree-cell-text(literaltext, selected, focus) 
+{
+  color: White;
+}
+
+treechildren::-moz-tree-cell-text(labeltext) 
+{
+  color: Green;
+}
+
+treechildren::-moz-tree-cell-text(labeltext, selected, focus) 
+{
+  color: White;
+}
+
+treechildren::-moz-tree-cell-text(hiddentext) 
+{
+  color: DarkGrey;
+}
+
+treechildren::-moz-tree-cell-text(hiddentext, selected, focus) 
+{
+  color: White;
+}
+
+treechildren::-moz-tree-row(selected) 
+{
+  background-color: gainsboro;
+}
+
+treechildren::-moz-tree-row(selected, focus) 
+{
+  background-color: DodgerBlue;
+}
+
+treechildren::-moz-tree-image(fetchingstatusicon) 
+{
+  list-style-image: url("chrome://rdfadev/content/img/fetchingstatus.png");
+  padding-right: 4px;  
+}
+
+treechildren::-moz-tree-image(uriokicon) 
+{ 
+  list-style-image: url("chrome://rdfadev/content/img/uriok.png");
+  padding-right: 4px;
+}
+
+treechildren::-moz-tree-image(urierroricon) 
+{ 
+  list-style-image: url("chrome://rdfadev/content/img/urierror.png");
+  padding-right: 4px;  
+}
+
+treechildren::-moz-tree-image(uriicon) 
+{ 
+  list-style-image: url("chrome://rdfadev/content/img/uri.png");
+  padding-right: 4px;
+}
+
+treechildren::-moz-tree-image(labelicon) 
+{ 
+  list-style-image: url("chrome://rdfadev/content/img/label.png");
+  padding-right: 4px;
+}
+
+treechildren::-moz-tree-image(literalicon) 
+{ 
+  list-style-image: url("chrome://rdfadev/content/img/literal.png");
+  padding-right: 4px;
+}
+
+treechildren::-moz-tree-image(labelokicon) 
+{ 
+  list-style-image: url("chrome://rdfadev/content/img/labelok.png");
+  padding-right: 4px;
+}
+
+treechildren::-moz-tree-image(labelerroricon) 
+{ 
+  list-style-image: url("chrome://rdfadev/content/img/labelerror.png");
+  padding-right: 4px;
+}
+
+treechildren::-moz-tree-image(gettinglabelicon) 
+{ 
+  list-style-image: url("chrome://rdfadev/content/img/gettinglabel.png");
+  padding-right: 4px;
+}
+
+treechildren::-moz-tree-image(curieicon) 
+{ 
+  list-style-image: url("chrome://rdfadev/content/img/curie.png");
+  padding-right: 4px;
+}
+
+treechildren::-moz-tree-image(curieokicon) 
+{ 
+  list-style-image: url("chrome://rdfadev/content/img/curieok.png");
+  padding-right: 4px;
+}
+
+treechildren::-moz-tree-image(curieerroricon) 
+{ 
+  list-style-image: url("chrome://rdfadev/content/img/curieerror.png");
+  padding-right: 4px;
+}
+
+treechildren::-moz-tree-image(checkingcurieicon) 
+{ 
+  list-style-image: url("chrome://rdfadev/content/img/checkingcurie.png");
+  padding-right: 4px;
+}
+
+treechildren::-moz-tree-image(noticeerroricon) 
+{ 
+  list-style-image: url("chrome://rdfadev/content/img/notice-error.png");
+  padding-right: 4px;
+}
+
+treechildren::-moz-tree-image(noticewarningicon) 
+{ 
+  list-style-image: url("chrome://rdfadev/content/img/notice-warning.png");
+  padding-right: 4px;
+}
+
+treechildren::-moz-tree-row(newelement) 
+{
+  background-color: Khaki;
+}
+
+treechildren::-moz-tree-row(newelement, selected) 
+{
+  background-color: #CCB45C;
+}
+
+treechildren::-moz-tree-row(newelement, selected, focus) 
+{
+  background-color: #CCB45C;
+}
+
+.selectedElement {
+  border: 1px solid #FF0000;
+}
+
+

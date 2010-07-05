@@ -1,0 +1,22 @@
+/* This is just an example.  You shouldn't do this. */
+#rdfadev-hello
+{
+  color: red ! important;
+}
+#rdfadev-toolbar-button
+{
+  list-style-image: url("chrome://rdfadev/skin/rdf.png");
+  -moz-image-region: rect(0px 24px 24px 0px);
+}
+#rdfadev-toolbar-button:hover
+{
+  -moz-image-region: rect(24px 24px 48px  0px);
+}
+[iconsize="small"] #rdfadev-toolbar-button
+{
+  -moz-image-region: rect( 0px 40px 16px 24px);
+}
+[iconsize="small"] #rdfadev-toolbar-button:hover
+{
+  -moz-image-region: rect(24px 40px 40px 24px);
+}

@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://global/skin/" type"text/css" ?>
+<?xml-stylesheet href="chrome://rdfadev/content/css/sidebarView.css" type"text/css" ?>
+<!DOCTYPE page SYSTEM "chrome://rdfadev/locale/overlay.dtd">
+
+<page id="rdfadevSidebar" title="&rdfadevSidebar.label;"
+         xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+</page>

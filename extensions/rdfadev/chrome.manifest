@@ -1,0 +1,7 @@
+content   rdfadev                 chrome/content/
+skin      rdfadev   classic/1.0   chrome/skin/
+locale    rdfadev   en-US         chrome/locale/en-US/
+
+
+overlay chrome://browser/content/browser.xul         chrome://rdfadev/content/overlayView.xul
+style   chrome://global/content/customizeToolbar.xul chrome://rdfadev/skin/overlay.css
