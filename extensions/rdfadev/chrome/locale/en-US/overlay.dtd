@@ -1,0 +1,49 @@
+<!ENTITY rdfadevSidebar.label                 "RDFa Developer">
+<!ENTITY rdfadevSidebar.rdfatab               "Data">
+<!ENTITY rdfadevSidebar.errortab              "Notices">
+<!ENTITY rdfadevSidebar.sparqltab             "Query">
+<!ENTITY rdfadevSidebar.consoletab            "Console">
+<!ENTITY rdfadevSidebar.urispopup             "URIs">
+<!ENTITY rdfadevSidebar.curiespopup           "CURIEs">
+<!ENTITY rdfadevSidebar.labelspopup           "Labels">
+<!ENTITY rdfadevSidebar.rdfatreetriplesheader "Triples">
+<!ENTITY rdfadevSidebar.rdfatreenumberheader  "Number of children">
+<!ENTITY rdfadevSidebar.resourcevisualization "Resource Visualization">
+<!ENTITY rdfadevSidebar.open                  "Open Link">
+<!ENTITY rdfadevSidebar.opennewwindow         "Open Link in New Window">
+<!ENTITY rdfadevSidebar.opennewtab            "Open Link in Tab">
+<!ENTITY rdfadevSidebar.opennewtabs           "Open Links in Tabs">
+<!ENTITY rdfadevSidebar.copy                  "Copy">
+<!ENTITY rdfadevSidebar.expandall             "Expand All">
+<!ENTITY rdfadevSidebar.contractall           "Contract All">
+<!ENTITY errordevSidebar.copy                 "Copy">
+<!ENTITY rdfadevSidebar.checkwithvapour       "Check URI with Vapour">
+<!ENTITY rdfadevSidebar.fetchuristatus        "Get Status and Labels of All URIs">
+<!ENTITY rdfadevSidebar.fetchurisstatus       "Get Status and Labels of All URIs">
+<!ENTITY rdfadevSidebar.checkvocabelement     "Check Vocabulary Element">
+<!ENTITY rdfadevSidebar.checkvocabelements    "Check Vocabulary Elements">
+<!ENTITY rdfadevSidebar.getlabel              "Retrieve Label">
+<!ENTITY rdfadevSidebar.getlabels             "Retrieve Labels">
+<!ENTITY rdfadevSidebar.documentvisualization "Document Visualization">
+<!ENTITY rdfadevSidebar.markuppopup           "Triple Markup">
+<!ENTITY rdfadevSidebar.highlightpopup        "Element Highlighting">
+<!ENTITY rdfadevSidebar.source                "View Source">
+<!ENTITY errordevSidebar.source               "View Source">
+<!ENTITY errordevSidebar.badprefix            "Look Up Prefix Namespace URI">
+<!ENTITY rdfadevSidebar.copytriple            "Copy Triple">
+<!ENTITY rdfadevSidebar.copytriples           "Copy Triples">
+<!ENTITY sparqlSidebar.sendbutton             "Send Query">
+<!ENTITY sparqlSidebar.showPrefixes           "Show More Prefixes">
+<!ENTITY sparqlSidebar.service                "SPARQL Service:">
+<!ENTITY sparqlSidebar.query                  "Query:">
+<!ENTITY sparqlSidebar.results                "Results:">
+<!ENTITY errorSidebar.treeHeader              "Messages">
+<!ENTITY rdfadevToolbarButton.label           "RDFa Developer">
+<!ENTITY rdfadevToolbarButton.tooltiptext     "RDFa Developer">
+<!ENTITY rdfadevConsoleTab.selectall          "Select All">
+<!ENTITY rdfadevConsoleTab.clear              "Clear Console">
+<!ENTITY rdfadevConsoleTab.validateparser     "Validate Parser">
+<!ENTITY rdfadevConsoleTab.copy               "Copy">
+<!ENTITY errorSidebar.validatemarkup          "Validate Document Markup">
+<!ENTITY sparqlSidebar.showmoreprefixes       "Show more prefixes...">
+<!ENTITY rdfadevSidebar.showgraph             "Show Document RDFa Graph">

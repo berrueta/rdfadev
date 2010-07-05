@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="chrome://rdfadev/skin/overlay.css" type="text/css"?>
+<?xml-stylesheet href="chrome://rdfadev/content/overlay/rdfadev.css" type="text/css"?>
+<?xml-stylesheet href="chrome://rdfadev/content/css/sidebarView.css" type"text/css" ?>
+<!DOCTYPE overlay SYSTEM "chrome://rdfadev/locale/overlay.dtd">
+
+<overlay id="rdfadev-overlay" xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+  <script src="overlay.js"/>
+  <script src="rdfaParser.js"/>
+  <script type="application/x-javascript" src="overlayView.js"/>
+  <script type="application/x-javascript" src="sidebarView.js"/>
+  <script type="application/x-javascript" src="hash.js" />
+  <script type="application/x-javascript" src="rdfaParser.js" /> 
+  <script type="application/x-javascript" src="parserValidation.js" /> 
+  <script type="application/x-javascript" src="progress.js" />
+  <script type="application/x-javascript" src="rdfaTreeView.js" /> 
+  <script type="application/x-javascript" src="errorTreeView.js" /> 
+  <script type="application/x-javascript" src="arrayExtends.js" /> 
+  <script type="application/x-javascript" src="sparqlView.js" />
+  <script type="application/x-javascript" src="scrolling.js" />
+  <script type="application/x-javascript" src="consoleView.js" /> 
+  <script type="application/x-javascript" src="valFunctions.js" /> 
+
+  <statusbar id="status-bar">
+    <statusbarpanel insertbefore="toggle_taskbar" onmousedown="toggleBottomBar();">
+      <box id="openRDFaDev"/>
+    </statusbarpanel>
+  </statusbar>
+
+  <vbox id="appcontent">
+    <splitter id="rdfadevContentSplitter" class="chromeclass-extrachrome" collapsed="true"/>
+    <vbox id="rdfadevContentBox" class="chromeclass-extrachrome" collapsed="true" persist="height">
+
+      <hbox align="center">
+				<spacer width="2"/>
+				<label value="&rdfadevSidebar.label;" flex="1" control="netNotesBottomBar"/>
+				<toolbarbutton class="tabs-closebutton" oncommand="toggleBottomBar();"/>
+				<spacer width="5"/>
+			</hbox>
+      
+      <stringbundleset id="stringbundleset">
+        <stringbundle id="rdfadev-strings" src="chrome://rdfadev/locale/overlay.properties"/>
+      </stringbundleset>
+
+      <popupset>
+        <popup id="popup-invisible">
+          <menuseparator id="menuseparator-expand"/>
+          <menuseparator id="menuseparator-copy"/>
+          <menuseparator id="menuseparator-open"/>
+          <menuseparator id="menuseparator-graph"/>
+          <menuitem id="menuitem-expandall"          label="&rdfadevSidebar.expandall;"          oncommand="rdfaTreeView.expandAll()"/>
+          <menuitem id="menuitem-contractall"        label="&rdfadevSidebar.contractall;"        oncommand="rdfaTreeView.contractAll()"/>
+          <menuitem id="menuitem-fetchuristatus"     label="&rdfadevSidebar.fetchuristatus;"     oncommand="rdfaTreeView.getAllURIsStatus()"/>
+          <menuitem id="menuitem-fetchurisstatus"    label="&rdfadevSidebar.fetchurisstatus;"    oncommand="rdfaTreeView.getAllURIsStatus()"/>
+          <menuitem id="menuitem-checkwithvapour"    label="&rdfadevSidebar.checkwithvapour;"    oncommand="rdfaTreeView.checkWithVapour()"/>
+          <menuitem id="menuitem-showgraph"          label="&rdfadevSidebar.showgraph;      "    oncommand="rdfaTreeView.showGraph()"/>
+          <menuitem id="menuitem-checkvocabelement"  label="&rdfadevSidebar.checkvocabelement;"  oncommand="rdfaTreeView.checkVocabElements()"/>
+          <menuitem id="menuitem-checkvocabelements" label="&rdfadevSidebar.checkvocabelements;" oncommand="rdfaTreeView.checkVocabElements()"/>
+          <menuitem id="menuitem-getlabel"           label="&rdfadevSidebar.getlabel;"           oncommand="rdfaTreeView.getLabels()"/>
+          <menuitem id="menuitem-getlabels"          label="&rdfadevSidebar.getlabels;"          oncommand="rdfaTreeView.getLabels()"/>
+          <menuitem id="menuitem-opennewtabs"        label="&rdfadevSidebar.opennewtabs;"        oncommand="rdfaTreeView.openSelectedURIs()"/>
+          <menuitem id="menuitem-open"               label="&rdfadevSidebar.open;"               oncommand="rdfaTreeView.openSelectedURI()"/>
+          <menuitem id="menuitem-opennewwindow"      label="&rdfadevSidebar.opennewwindow;"      oncommand="rdfaTreeView.openSelectedURIsNewWindow()"/>
+          <menuitem id="menuitem-opennewtab"         label="&rdfadevSidebar.opennewtab;"         oncommand="rdfaTreeView.openSelectedURIs()"/>
+          <menuitem id="menuitem-source"             label="&rdfadevSidebar.source;"             oncommand="rdfaTreeView.openElementSource()"/>
+          <menuitem id="menuitem-errorsource"        label="&errordevSidebar.source;"            oncommand="errorTreeView.openElementSource()"/>
+          <menuitem id="menuitem-errorbadprefix"     label="&errordevSidebar.badprefix;"         oncommand="errorTreeView.openPrefixNamespaceURI()"/>
+          <menuitem id="menuitem-copy"               label="&rdfadevSidebar.copy;"               oncommand="rdfaTreeView.copySelectedElements()"/>
+          <menuitem id="menuitem-errorcopy"          label="&errordevSidebar.copy;"              oncommand="errorTreeView.copySelectedElements()"/>
+          <menuitem id="menuitem-copytriples"        label="&rdfadevSidebar.copytriples;"        oncommand="rdfaTreeView.copyTriples()"/>
+          <menuitem id="menuitem-copytriple"         label="&rdfadevSidebar.copytriple;"         oncommand="rdfaTreeView.copyTriples()"/>
+          <menuitem id="menu-validatemarkup"         label="&errorSidebar.validatemarkup;"       oncommand="errorTreeView.validateMarkup()"/>
+          <menu     id="menu-treevisualization"      label="&rdfadevSidebar.resourcevisualization;">
+            <menupopup>
+              <menuitem label="&rdfadevSidebar.urispopup;"   type="radio" oncommand="rdfaTreeView.treeVisualization = treeVisualization.URIs;   rdfaTreeView.treeBox.invalidate(); "/>
+              <menuitem label="&rdfadevSidebar.curiespopup;" type="radio" oncommand="rdfaTreeView.treeVisualization = treeVisualization.CURIEs; rdfaTreeView.treeBox.invalidate(); " checked="true"/>
+              <menuitem label="&rdfadevSidebar.labelspopup;" type="radio" oncommand="rdfaTreeView.treeVisualization = treeVisualization.Labels; rdfaTreeView.treeBox.invalidate(); "/>
+            </menupopup>
+          </menu>
+          <menu id="menu-documentvisualization" label="&rdfadevSidebar.documentvisualization;">
+            <menupopup>
+              <menuitem label="&rdfadevSidebar.markuppopup;" 
+                        type="checkbox" oncommand="rdfaTreeView.toggleElementMarkup();
+                                                   errorTreeView.toggleElementMarkup()"       checked="false" />
+              <menuitem label="&rdfadevSidebar.highlightpopup;"
+                        type="checkbox" oncommand="rdfaTreeView.toggleElementHighlighting();
+                                                   errorTreeView.toggleElementHighlighting()" checked="true" />
+            </menupopup>
+          </menu>
+        </popup>
+        <popup id="popup-empty" >
+        </popup>
+
+        <popupset>
+          <menupopup id="textboxpopup">
+            <menuitem label="&rdfadevConsoleTab.copy;"           oncommand="goDoCommand('cmd_copy');"/>
+            <menuitem label="&rdfadevConsoleTab.selectall;"      oncommand="goDoCommand('cmd_selectAll');"/>
+            <menuitem label="&rdfadevConsoleTab.clear;"          oncommand="consoleView.clearConsole();"/>
+            <menuseparator/>
+            <menuitem label="&rdfadevConsoleTab.validateparser;" oncommand="consoleView.validateParser();"/>
+          </menupopup>
+        </popupset>
+
+      </popupset>    
+          
+      <tabbox id="sidebarTabbox" selectedIndex="0" flex="1">
+        <tabs>
+          <tab id="rdfaTab"       label="&rdfadevSidebar.rdfatab;"/>
+          <tab id="errorTab"      label="&rdfadevSidebar.errortab;"/>
+          <tab id="sparqlTab"     label="&rdfadevSidebar.sparqltab;"/>
+          <!--<tab id="consoleTab"    label="&rdfadevSidebar.consoletab;"/> -->
+        </tabs>
+        <tabpanels flex="1">
+          <tabpanel>
+                <tree id="rdfaTree" flex="1" onselect="rdfaTreeView.updateHighlighting()" onclick="rdfaTreeView.onclick(event)">
+                  <treecols >
+                    <treecol id="triples" label="&rdfadevSidebar.rdfatreetriplesheader;" primary="true"  flex="95%" onclick="rdfaTreeView.sort(this)" crop="center"/>
+                    <splitter class="tree-splitter"/>
+                    <treecol id="number"  label="&rdfadevSidebar.rdfatreenumberheader;"  primary="false" flex="5%" crop="center" hidden="false"/>
+                    <splitter class="tree-splitter"/>
+                  </treecols>
+                  <treechildren id="rdfaTreeChildren">
+                  </treechildren>
+                </tree>
+          </tabpanel>
+          <tabpanel>
+                <tree id="errorTree" flex="1" onselect="errorTreeView.updateHighlighting()" onclick="errorTreeView.onclick(event)">
+                  <treecols>
+                    <treecol id="error" label="&errorSidebar.treeHeader;" primary="true" onclick="" flex="1"/>
+                  </treecols>
+                  <treechildren id="errorTreeChildren">
+                  </treechildren>
+                </tree>
+          </tabpanel>
+          <tabpanel>
+                <hbox flex="1">
+                  <!--<vbox flex="1">-->
+                    <!--<label crop="center" value="PREFIX cc: &lt;http://creativecommons.org/ns#>"/>-->
+                    <!--<label crop="center" value="PREFIX owl: &lt;http://www.w3.org/2002/07/owl#>"/>-->
+                    <!--<label crop="center" value="PREFIX dbp: &lt;http://dbpedia.org/property/>"/>-->
+                    <!--<vbox id="predefinedPrefixesLabels" hidden="true">-->
+                      <!--<label crop="center" value="PREFIX dbr: &lt;http://dbpedia.org/resource/>"/>-->
+                      <!--<label crop="center" value="PREFIX dc: &lt;http://purl.org/dc/elements/1.1/>"/>-->
+                      <!--<label crop="center" value="PREFIX ex: &lt;http://example.org/>"/>-->
+                      <!--<label crop="center" value="PREFIX foaf: &lt;http://xmlns.com/foaf/0.1/>"/>-->
+                      <!--<label crop="center" value="PREFIX rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#>"/>-->
+                      <!--<label crop="center" value="PREFIX rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#>"/>-->
+                      <!--<label crop="center" value="PREFIX xhv: &lt;http://www.w3.org/1999/xhtml/vocab#>"/>-->
+                      <!--<label crop="center" value="PREFIX xsd: &lt;http://www.w3.org/2001/XMLSchema#>"/>-->
+                    <!--</vbox>-->
+                    <!--<label id="showMorePrefixesLabel" crop="center" value="&sparqlSidebar.showmoreprefixes;" tooltiptext="&sparqlSidebar.showPrefixes;" -->
+                    <!--       style="cursor: pointer;" onclick="showPrefixes();" />-->
+                    
+                    <!--<label id="sparqlLabel" crop="center"/>-->
+                  <!--</vbox>-->
+                  <!--<splitter id="sparqlSplitter1"/>-->
+                  <vbox flex="2">                    
+                    <hbox>
+                      <label value="&sparqlSidebar.query;"/>
+                    </hbox>
+                    <textbox id="sparqlQuery" wrap="off" flex="1" multiline="true" onkeypress=""/>
+                    <label value="&sparqlSidebar.service;" />
+                    <hbox align="right">
+                      <textbox id="sparqlService" flex="1" value="http://sparql.org/sparql"/>
+                      <button id="sparqlButton" label="&sparqlSidebar.sendbutton;" oncommand="sparqlView.sendQuery()"/>
+                    </hbox>
+                  </vbox>
+                  <splitter id="sparqlSplitter2"/>
+                  <vbox id="sparqlResults" flex="4">
+                    <hbox>
+                      <label value="&sparqlSidebar.results;"/>
+                    </hbox>
+                    <tree id="sparqlResultsTree" flex="1" onclick="sparqlResultsTreeView.onclick(event)" seltype="single" disabled="true">
+                      <treecols id="sparqlResultsTreeCols">
+                      </treecols>
+                      <treechildren id="sparqlResultsTreeChildren">
+                      </treechildren>
+                    </tree>
+                  </vbox>
+                </hbox>
+          </tabpanel>
+                <vbox>
+                  <textbox id="console" wrap="off" flex="1" multiline="true" readonly="readonly" onkeypress="" context="textboxpopup"/>
+                </vbox>
+        <tabpanel>
+          </tabpanel>
+        </tabpanels>
+      </tabbox>
+
+    </vbox>
+  </vbox>
+
+</overlay>
