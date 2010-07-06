@@ -114,7 +114,7 @@ var NCNameChar      = "(?:\\w|\\d|\\.|-|_" + CombiningChar + "|" + Extender + ")
 var NCName          = "(?:\\w|_)(?:" + NCNameChar + ")*";
 var PrefixedAttName = "xmlns:(" + NCName + ")";
 
-var DocMediaType    = "application/xhtml+xml" + "(?:;.*)?";
+var DocMediaType    = "application\\/xhtml\\+xml" + "(?:;.*)?";
 
 
 function getDocMediaType(attributeValue)
