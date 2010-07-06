@@ -250,9 +250,12 @@ function execute(documento)
 
   if(meta_tags != null)
   {
+
     for(var i = 0; i < meta_tags.length; i++)
     {
-      if(meta_tags[i].getAttribute("http-equiv") == "Content-Type")
+      var http_equiv_content = meta_tags[i].getAttribute("http-equiv");
+
+      if((http_equiv_content != null) && (http_equiv_content.toUpperCase() == "CONTENT-TYPE"))
       {
         var document_media_type;
 
