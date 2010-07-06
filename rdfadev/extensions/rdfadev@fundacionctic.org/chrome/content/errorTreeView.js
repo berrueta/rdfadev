@@ -72,7 +72,8 @@ var errorView = {
       var currentDocument = currentBrowser.contentWindow.document;
 
       errorTreeView.cleanDocumentMarkup(currentDocument);
-      currentDocument.errores = null;
+      currentDocument.errores              = null;
+      currentDocument.errorTreeVisibleData = null;
     }
      
   },
@@ -169,14 +170,18 @@ var errorTreeView = {
       {
         this.visibleData = doc.errorTreeVisibleData;
 
-        this.treeBox.rowCountChanged(0, this.errores.length);
+        this.treeBox.rowCountChanged(0, this.visibleData.length);
         this.updateVisibleData();
       }
       /* new visibleData from errors */
       else
       {
-        this.visibleData = copyArray(doc.errores);
-        this.treeBox.rowCountChanged(0, doc.errores.length);
+        this.visibleData = [];
+        for(var i = 0; i < doc.errores.length; i++)
+        {
+          this.visibleData.push(doc.errores[i]);
+          this.treeBox.rowCountChanged(this.visibleData.length - 1, 1);
+        }
       }
       
       if(this.elementMarkup == true)
@@ -683,7 +688,6 @@ var errorTreeView = {
 
   updateVisibleData: function()
   {
-
     for(var i = this.visibleData.length - 1; i >= 0; i--)
     {
 
@@ -696,10 +700,9 @@ var errorTreeView = {
       }
       
       var encontrado = false;
-      
+
       for(var j = 0; j < this.errores.length; j++)
       {
-
         if(this.visibleData[i] == this.errores[j])
         {
           encontrado = true;
