@@ -16,13 +16,11 @@ function toggleBottomBar()
   {
     document.getElementById('rdfadevContentSplitter').collapsed = false;
     document.getElementById('rdfadevContentBox').collapsed = false;
-    startup();
   }
   else
   { 
     document.getElementById('rdfadevContentSplitter').collapsed = true;
     document.getElementById('rdfadevContentBox').collapsed = true;
-    shutdown();
   }
 }
 
