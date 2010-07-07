@@ -22,7 +22,7 @@
   <script type="application/x-javascript" src="valFunctions.js" /> 
 
   <statusbar id="status-bar">
-    <statusbarpanel insertbefore="toggle_taskbar" onmousedown="toggleBottomBar();">
+    <statusbarpanel position="1" onmousedown="toggleBottomBar();">
       <box id="openRDFaDev"/>
     </statusbarpanel>
   </statusbar>

@@ -1,9 +1,9 @@
 #openRDFaDev 
 {
   -moz-appearance:     none !important;
-  background-image:    url("chrome://rdfadev/content/overlay/rdfa.png");
+  background-image:    url("chrome://rdfadev/content/overlay/firefox_rdfa.png");
   background-position: center center;
   background-repeat:   no-repeat;
-  width:               56px;
+  width:               15px;
   height:              15px;
 }
