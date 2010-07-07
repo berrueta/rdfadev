@@ -226,7 +226,7 @@ var xsdDatatypes = [{regExp: integerRegExp,    datatype: "http://www.w3.org/2001
                     {regExp: gMonthRegExp,     datatype: "http://www.w3.org/2001/XMLSchema#gMonth",     short: "xsd:gMonth"},
                     {regExp: booleanRegExp,    datatype: "http://www.w3.org/2001/XMLSchema#boolean",    short: "xsd:boolean"}];
 
-function checkDatatype(triple, literal, datatype, error_list)
+function checkDatatype(literal_repr, literal, datatype, error_list)
 {
 
   if((error_list == null) || (literal == null))
@@ -238,7 +238,7 @@ function checkDatatype(triple, literal, datatype, error_list)
   
   for(var i = 0; i < xsdDatatypes.length; i++)
   {
-    var xsdExp          = new RegExp( "^" + xsdDatatypes[i].regExp + "$" );
+    var xsdExp          = new RegExp( "^\\s*" + xsdDatatypes[i].regExp + "\\s*$" );
     var resXsdExp       = xsdExp.exec(literal);
 
     if(resXsdExp != null)
@@ -259,7 +259,7 @@ function checkDatatype(triple, literal, datatype, error_list)
   
   if(correctDatatypes != null)
   {
-    error_list.push({code: parserError.missingLiteralDatatype, literal: literal, correctDatatype: correctDatatypes});
+    error_list.push({code: parserError.missingLiteralDatatype, literal: literal_repr, correctDatatype: correctDatatypes});
   }
   
 }
