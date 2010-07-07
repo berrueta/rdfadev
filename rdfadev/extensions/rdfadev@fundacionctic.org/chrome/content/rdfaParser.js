@@ -1602,10 +1602,7 @@ function formaTripleta(elemento, sujeto, predicado, objeto, URI_mappings, baseUR
   /* check for correct datatype */ 
   if((errores_elemento != null) && (newObject.literal != null))
   {
-    checkDatatype(this.tripletas.sujetos[strSubject].repr[treeVisualization.URIs] + 
-                  this.tripletas.sujetos[strSubject].predicados[strPredicate].repr[treeVisualization.URIs] + 
-                  newObject.repr[treeVisualization.URIs], 
-                  newObject.literal, newObject.datatype, errores_elemento)
+    checkDatatype(newObject.repr[treeVisualization.URIs], newObject.literal, newObject.datatype, errores_elemento)
   }
   
   /* check for missing language information */  
