@@ -9,23 +9,8 @@ var sparqlView = {
   {
       var prequery        = new Object();
 
-      prequery.ccPrefix      = "PREFIX cc: <http://creativecommons.org/ns#>";
-      prequery.owlPrefix     = "PREFIX owl: <http://www.w3.org/2002/07/owl#>";
-      prequery.dbpPrefix     = "PREFIX dbp: <http://dbpedia.org/property/>";
-      prequery.dbrPrefix     = "PREFIX dbr: <http://dbpedia.org/resource/>";
-      prequery.dcPrefix      = "PREFIX dc: <http://purl.org/dc/elements/1.1/>";
-      prequery.exPrefix      = "PREFIX ex: <http://example.org/>";
-      prequery.foafPrefix    = "PREFIX foaf: <http://xmlns.com/foaf/0.1/>";
-      prequery.rdfPrefix     = "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>";
-      prequery.rdfsPrefix    = "PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>";
-      prequery.xhvPrefix     = "PREFIX xhv: <http://www.w3.org/1999/xhtml/vocab#>";
-      prequery.xsdPrefix     = "PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>";
-      prequery.urlFrom       = "http://www.w3.org/2007/08/pyRdfa/extract?format=pretty-xml&warnings=false&parser=lax&space-preserve=true&uri=" 
-                               + encodeURIComponent(top.getBrowser().contentWindow.document.URL);
-      prequery.prequery      = prequery.ccPrefix      + "\n" + prequery.owlPrefix   + "\n" + prequery.dbpPrefix  + "\n" +
-                               prequery.dbrPrefix     + "\n" + prequery.dcPrefix    + "\n" + prequery.exPrefix   + "\n" + prequery.foafPrefix + "\n" + 
-                               prequery.rdfPrefix     + "\n" + prequery.rdfsPrefix  + "\n" + prequery.xhvPrefix  + "\n" + 
-                               prequery.xsdPrefix     + "\n" /* + prequery.urlFrom     + "\n"*/;
+      prequery.urlFrom    = "http://www.w3.org/2007/08/pyRdfa/extract?format=pretty-xml&warnings=false&parser=lax&space-preserve=true&uri=" 
+                            + encodeURIComponent(top.getBrowser().contentWindow.document.URL);
 
       return prequery;
   },
@@ -36,11 +21,8 @@ var sparqlView = {
     this.browser        = top.getBrowser().selectedBrowser;
     this.sparqlPreQuery = this.preQuery();
 
-    //document.getElementById("sparqlLabel").value     = this.sparqlPreQuery.urlFrom;
     document.getElementById("sparqlQuery").value     = "select * where { ?subject ?predicate ?object . }";
     document.getElementById("sparqlButton").disabled = false;
-    //document.getElementById('predefinedPrefixesLabels').setAttribute('hidden', 'true');    
-    //document.getElementById('showMorePrefixesLabel').setAttribute('hidden', 'false');    
     
     sparqlResultsTreeView.cleanTree();
   },
@@ -53,7 +35,6 @@ var sparqlView = {
       this.doc.sparqlQuery                    = document.getElementById("sparqlQuery").value; 
       this.doc.sparqlResults                  = sparqlResultsTreeView.getContext();
       this.doc.sparqlButtonDisabled           = document.getElementById("sparqlButton").disabled; 
-      //this.doc.sparqlHiddenPredefinedPrefixes = document.getElementById('predefinedPrefixesLabels').getAttribute('hidden');
     }
   },
 
@@ -71,15 +52,13 @@ var sparqlView = {
       this.sparqlPreQuery = this.doc.sparqlPreQuery;
     }
 
-    //document.getElementById("sparqlLabel").value = this.sparqlPreQuery.urlFrom;
-
     if(this.doc.sparqlQuery != null)
     {
       document.getElementById("sparqlQuery").value = this.doc.sparqlQuery; 
     }
     else
     {
-      document.getElementById("sparqlQuery").value = "select * where { ?x ?y ?z . }"; 
+      document.getElementById("sparqlQuery").value = "select * where { ?subject ?predicate ?object . }"; 
     }
 
     sparqlResultsTreeView.cleanTree();
@@ -97,17 +76,6 @@ var sparqlView = {
     {
       document.getElementById("sparqlButton").disabled = false; 
     }
-
-    /*if(this.doc.sparqlHiddenPredefinedPrefixes != 'false')
-    {
-      document.getElementById('predefinedPrefixesLabels').setAttribute('hidden', 'true');
-      document.getElementById('showMorePrefixesLabel').setAttribute('hidden', 'false'); 
-    }
-    else
-    {
-      document.getElementById('predefinedPrefixesLabels').setAttribute('hidden', 'false');
-      document.getElementById('showMorePrefixesLabel').setAttribute('hidden', 'true'); 
-    }*/
 
   },  
 
@@ -144,7 +112,6 @@ var sparqlView = {
       {
         if(xmlhttp.status != 200)
         {
-          top.getBrowser().selectedTab = top.getBrowser().addTab(triplrUrl);
         }
         else
         {
@@ -175,10 +142,9 @@ var sparqlView = {
           {
             currentDoc.sparqlResults = new Object();
           }
-          currentDoc.sparqlResults.headers          = hs;
-          currentDoc.sparqlResults.results          = rs;
-          currentDoc.sparqlButtonDisabled           = false;
-          //currentDoc.sparqlHiddenPredefinedPrefixes = 'true';
+          currentDoc.sparqlResults.headers = hs;
+          currentDoc.sparqlResults.results = rs;
+          currentDoc.sparqlButtonDisabled  = false;
         }
       }
     }
@@ -393,6 +359,7 @@ var sparqlResultsTreeView = {
     {
       /* remove column */
       treeCols.removeChild(treeCols.childNodes[0]);
+
       /* remove header */
       treeCols.removeChild(treeCols.childNodes[0]);
     }
@@ -462,8 +429,6 @@ var sparqlResultsTreeView = {
       prop.AppendElement(aserv.getAtom("literaltext"));
       return;
     }
-
-    /* TODO: falta ponerle color a los bnodes */
 
   },
 

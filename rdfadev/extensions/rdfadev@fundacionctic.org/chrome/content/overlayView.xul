@@ -134,26 +134,6 @@
           </tabpanel>
           <tabpanel>
                 <hbox flex="1">
-                  <!--<vbox flex="1">-->
-                    <!--<label crop="center" value="PREFIX cc: &lt;http://creativecommons.org/ns#>"/>-->
-                    <!--<label crop="center" value="PREFIX owl: &lt;http://www.w3.org/2002/07/owl#>"/>-->
-                    <!--<label crop="center" value="PREFIX dbp: &lt;http://dbpedia.org/property/>"/>-->
-                    <!--<vbox id="predefinedPrefixesLabels" hidden="true">-->
-                      <!--<label crop="center" value="PREFIX dbr: &lt;http://dbpedia.org/resource/>"/>-->
-                      <!--<label crop="center" value="PREFIX dc: &lt;http://purl.org/dc/elements/1.1/>"/>-->
-                      <!--<label crop="center" value="PREFIX ex: &lt;http://example.org/>"/>-->
-                      <!--<label crop="center" value="PREFIX foaf: &lt;http://xmlns.com/foaf/0.1/>"/>-->
-                      <!--<label crop="center" value="PREFIX rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#>"/>-->
-                      <!--<label crop="center" value="PREFIX rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#>"/>-->
-                      <!--<label crop="center" value="PREFIX xhv: &lt;http://www.w3.org/1999/xhtml/vocab#>"/>-->
-                      <!--<label crop="center" value="PREFIX xsd: &lt;http://www.w3.org/2001/XMLSchema#>"/>-->
-                    <!--</vbox>-->
-                    <!--<label id="showMorePrefixesLabel" crop="center" value="&sparqlSidebar.showmoreprefixes;" tooltiptext="&sparqlSidebar.showPrefixes;" -->
-                    <!--       style="cursor: pointer;" onclick="showPrefixes();" />-->
-                    
-                    <!--<label id="sparqlLabel" crop="center"/>-->
-                  <!--</vbox>-->
-                  <!--<splitter id="sparqlSplitter1"/>-->
                   <vbox flex="2">                    
                     <hbox>
                       <label value="&sparqlSidebar.query;"/>
