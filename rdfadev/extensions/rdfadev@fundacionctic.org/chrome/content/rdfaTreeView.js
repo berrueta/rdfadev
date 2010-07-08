@@ -1640,7 +1640,7 @@ var rdfaTreeView = {
                               "uri=" + encodedUrl + "&format=pretty-xml&warnings=false&parser=lax&space-preserve=true";
     var encodedDistillerUrl = encodeURIComponent(distillerUrl);
     var validatorUrl        = "http://www.w3.org/RDF/Validator/ARPServlet" + "?" + 
-                              "URI=" + encodedDistillerUrl + "&PARSE=Parse+URI%3A+&TRIPLES_AND_GRAPH=PRINT_BOTH&FORMAT=PNG_EMBED";
+                              "URI=" + encodedDistillerUrl + "&PARSE=Parse+URI%3A+&TRIPLES_AND_GRAPH=PRINT_BOTH&FORMAT=PNG_EMBED#graph";
 
     top.getBrowser().selectedTab = top.getBrowser().addTab(validatorUrl);
   },

@@ -28,8 +28,8 @@
   </statusbar>
 
   <vbox id="appcontent">
-    <splitter id="rdfadevContentSplitter" class="chromeclass-extrachrome" collapsed="true"/>
-    <vbox id="rdfadevContentBox" class="chromeclass-extrachrome" collapsed="true" persist="height">
+    <splitter id="rdfadevContentSplitter" class="chromeclass-extrachrome" persist="collapsed"/>
+    <vbox id="rdfadevContentBox" class="chromeclass-extrachrome" persist="collapsed">
 
       <hbox align="center">
 				<spacer width="2"/>
