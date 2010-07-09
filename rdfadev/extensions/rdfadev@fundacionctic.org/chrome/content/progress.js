@@ -1,3 +1,6 @@
+/* see license.txt for terms of usage */
+
+
 const STATE_START      = Components.interfaces.nsIWebProgressListener.STATE_START;
 const STATE_STOP       = Components.interfaces.nsIWebProgressListener.STATE_STOP;
 const STATE_IS_WINDOW  = Components.interfaces.nsIWebProgressListener.STATE_IS_WINDOW;

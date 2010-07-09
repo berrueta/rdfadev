@@ -1,3 +1,6 @@
+/* see license.txt for terms of usage */
+
+
 rdfadev.onFirefoxLoad = function(event)
 {
   document.getElementById("contentAreaContextMenu")

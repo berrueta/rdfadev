@@ -1,3 +1,6 @@
+/* see license.txt for terms of usage */
+
+
 var rdfadev = 
 {
   onLoad: function() 
