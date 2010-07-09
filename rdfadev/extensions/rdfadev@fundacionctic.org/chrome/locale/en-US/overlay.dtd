@@ -47,3 +47,4 @@
 <!ENTITY errorSidebar.validatemarkup          "Validate Document Markup">
 <!ENTITY sparqlSidebar.showmoreprefixes       "Show more prefixes...">
 <!ENTITY rdfadevSidebar.showgraph             "Show Document RDFa Graph">
+<!ENTITY rdfadev.about                        "About RDFa Developer">

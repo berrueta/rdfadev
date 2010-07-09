@@ -4,15 +4,43 @@
 
 <!DOCTYPE dialog SYSTEM "chrome://rdfadev/locale/about.dtd">
 
-<dialog title="&about; rdfadev" orient="vertical" autostretch="always" onload="sizeToContent()" buttons="accept" xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+<dialog title       = "&about;" 
+        orient      = "vertical" 
+        autostretch = "always" 
+        onload      = "sizeToContent()" 
+        buttons     = "accept" 
+        xmlns       = "http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+
   <groupbox align="center" orient="horizontal">
     <vbox>
-      <text value="rdfadev" style="font-weight: bold; font-size: x-large;"/>
-      <text value="&version; 1.0"/>
+
+      <text value="RDFa Developer" style="font-weight: bold; font-size: x-large;"/>
+      <text value="&version; 0.1"/>
+
       <separator class="thin"/>
+
+      <vbox>
+ 
+        <hbox>
+          <text value="&license;"  align="left"/>
+          <text value="&homepage;" align="right"/>
+        </hbox>
+
+      </vbox>
+
+      <separator class="thin"/>
+
       <text value="&createdBy;" style="font-weight: bold;"/>
-      <text value="Javier"/>
+      <text value="Javier Pozueco"/>
+
       <separator class="thin"/>
+
+      <text value="&contributors;" style="font-weight: bold;"/>
+      <text value="Diego Berrueta"/>
+      <text value="Luis Polo"/>
+      <text value="Jose E. Labra"/>
+
     </vbox>
   </groupbox>
+
 </dialog>

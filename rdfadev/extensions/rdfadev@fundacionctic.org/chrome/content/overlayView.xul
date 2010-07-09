@@ -22,86 +22,88 @@
   <script type="application/x-javascript" src="valFunctions.js" /> 
 
   <statusbar id="status-bar">
-    <statusbarpanel position="1" onmousedown="toggleBottomBar();">
+    <statusbarpanel position="1" onclick="onBottomBarClick(event);">
       <box id="openRDFaDev"/>
     </statusbarpanel>
   </statusbar>
+
+  <popupset>
+    <popup id="popup-invisible">
+      <menuseparator id="menuseparator-expand"/>
+      <menuseparator id="menuseparator-copy"/>
+      <menuseparator id="menuseparator-open"/>
+      <menuseparator id="menuseparator-graph"/>
+      <menuseparator id="menuseparator-about"/>
+      <menuitem id="menuitem-expandall"          label="&rdfadevSidebar.expandall;"          oncommand="rdfaTreeView.expandAll()"/>
+      <menuitem id="menuitem-contractall"        label="&rdfadevSidebar.contractall;"        oncommand="rdfaTreeView.contractAll()"/>
+      <menuitem id="menuitem-fetchuristatus"     label="&rdfadevSidebar.fetchuristatus;"     oncommand="rdfaTreeView.getAllURIsStatus()"/>
+      <menuitem id="menuitem-fetchurisstatus"    label="&rdfadevSidebar.fetchurisstatus;"    oncommand="rdfaTreeView.getAllURIsStatus()"/>
+      <menuitem id="menuitem-checkwithvapour"    label="&rdfadevSidebar.checkwithvapour;"    oncommand="rdfaTreeView.checkWithVapour()"/>
+      <menuitem id="menuitem-showgraph"          label="&rdfadevSidebar.showgraph;      "    oncommand="rdfaTreeView.showGraph()"/>
+      <menuitem id="menuitem-checkvocabelement"  label="&rdfadevSidebar.checkvocabelement;"  oncommand="rdfaTreeView.checkVocabElements()"/>
+      <menuitem id="menuitem-checkvocabelements" label="&rdfadevSidebar.checkvocabelements;" oncommand="rdfaTreeView.checkVocabElements()"/>
+      <menuitem id="menuitem-getlabel"           label="&rdfadevSidebar.getlabel;"           oncommand="rdfaTreeView.getLabels()"/>
+      <menuitem id="menuitem-getlabels"          label="&rdfadevSidebar.getlabels;"          oncommand="rdfaTreeView.getLabels()"/>
+      <menuitem id="menuitem-opennewtabs"        label="&rdfadevSidebar.opennewtabs;"        oncommand="rdfaTreeView.openSelectedURIs()"/>
+      <menuitem id="menuitem-open"               label="&rdfadevSidebar.open;"               oncommand="rdfaTreeView.openSelectedURI()"/>
+      <menuitem id="menuitem-opennewwindow"      label="&rdfadevSidebar.opennewwindow;"      oncommand="rdfaTreeView.openSelectedURIsNewWindow()"/>
+      <menuitem id="menuitem-opennewtab"         label="&rdfadevSidebar.opennewtab;"         oncommand="rdfaTreeView.openSelectedURIs()"/>
+      <menuitem id="menuitem-source"             label="&rdfadevSidebar.source;"             oncommand="rdfaTreeView.openElementSource()"/>
+      <menuitem id="menuitem-errorsource"        label="&errordevSidebar.source;"            oncommand="errorTreeView.openElementSource()"/>
+      <menuitem id="menuitem-errorbadprefix"     label="&errordevSidebar.badprefix;"         oncommand="errorTreeView.openPrefixNamespaceURI()"/>
+      <menuitem id="menuitem-copy"               label="&rdfadevSidebar.copy;"               oncommand="rdfaTreeView.copySelectedElements()"/>
+      <menuitem id="menuitem-errorcopy"          label="&errordevSidebar.copy;"              oncommand="errorTreeView.copySelectedElements()"/>
+      <menuitem id="menuitem-copytriples"        label="&rdfadevSidebar.copytriples;"        oncommand="rdfaTreeView.copyTriples()"/>
+      <menuitem id="menuitem-copytriple"         label="&rdfadevSidebar.copytriple;"         oncommand="rdfaTreeView.copyTriples()"/>
+      <menuitem id="menu-validatemarkup"         label="&errorSidebar.validatemarkup;"       oncommand="errorTreeView.validateMarkup()"/>
+      <menuitem id="menuitem-about"              label="&rdfadev.about;"                     oncommand="showAbout()"/>
+      <menu     id="menu-treevisualization"      label="&rdfadevSidebar.resourcevisualization;">
+        <menupopup>
+          <menuitem label="&rdfadevSidebar.urispopup;"   type="radio" oncommand="rdfaTreeView.treeVisualization = treeVisualization.URIs;   rdfaTreeView.treeBox.invalidate(); "/>
+          <menuitem label="&rdfadevSidebar.curiespopup;" type="radio" oncommand="rdfaTreeView.treeVisualization = treeVisualization.CURIEs; rdfaTreeView.treeBox.invalidate(); " checked="true"/>
+          <menuitem label="&rdfadevSidebar.labelspopup;" type="radio" oncommand="rdfaTreeView.treeVisualization = treeVisualization.Labels; rdfaTreeView.treeBox.invalidate(); "/>
+        </menupopup>
+      </menu>
+      <menu id="menu-documentvisualization" label="&rdfadevSidebar.documentvisualization;">
+        <menupopup>
+          <menuitem label="&rdfadevSidebar.markuppopup;" 
+                    type="checkbox" oncommand="rdfaTreeView.toggleElementMarkup();
+                                               errorTreeView.toggleElementMarkup()"       checked="false" />
+          <menuitem label="&rdfadevSidebar.highlightpopup;"
+                    type="checkbox" oncommand="rdfaTreeView.toggleElementHighlighting();
+                                               errorTreeView.toggleElementHighlighting()" checked="true" />
+        </menupopup>
+      </menu>
+    </popup>
+    <popup id="popup-empty" >
+    </popup>
+
+    <popupset>
+      <menupopup id="textboxpopup">
+        <menuitem label="&rdfadevConsoleTab.copy;"           oncommand="goDoCommand('cmd_copy');"/>
+        <menuitem label="&rdfadevConsoleTab.selectall;"      oncommand="goDoCommand('cmd_selectAll');"/>
+        <menuitem label="&rdfadevConsoleTab.clear;"          oncommand="consoleView.clearConsole();"/>
+        <menuseparator/>
+        <menuitem label="&rdfadevConsoleTab.validateparser;" oncommand="consoleView.validateParser();"/>
+      </menupopup>
+    </popupset>
+
+  </popupset>    
 
   <vbox id="appcontent">
     <splitter id="rdfadevContentSplitter" class="chromeclass-extrachrome" persist="collapsed"/>
     <vbox id="rdfadevContentBox" class="chromeclass-extrachrome" persist="collapsed">
 
-      <hbox align="center">
-				<spacer width="2"/>
-				<label value="&rdfadevSidebar.label;" flex="1" control="netNotesBottomBar"/>
-				<toolbarbutton class="tabs-closebutton" oncommand="toggleBottomBar();"/>
-				<spacer width="5"/>
-			</hbox>
-      
+      <hbox align="center"> 
+        <spacer width="2"/> 
+        <label value="&rdfadevSidebar.label;" flex="1" control="netNotesBottomBar"/> 
+        <toolbarbutton class="tabs-closebutton" oncommand="toggleBottomBar();"/> 
+        <spacer width="5"/> 
+      </hbox>   
+
       <stringbundleset id="stringbundleset">
         <stringbundle id="rdfadev-strings" src="chrome://rdfadev/locale/overlay.properties"/>
       </stringbundleset>
-
-      <popupset>
-        <popup id="popup-invisible">
-          <menuseparator id="menuseparator-expand"/>
-          <menuseparator id="menuseparator-copy"/>
-          <menuseparator id="menuseparator-open"/>
-          <menuseparator id="menuseparator-graph"/>
-          <menuitem id="menuitem-expandall"          label="&rdfadevSidebar.expandall;"          oncommand="rdfaTreeView.expandAll()"/>
-          <menuitem id="menuitem-contractall"        label="&rdfadevSidebar.contractall;"        oncommand="rdfaTreeView.contractAll()"/>
-          <menuitem id="menuitem-fetchuristatus"     label="&rdfadevSidebar.fetchuristatus;"     oncommand="rdfaTreeView.getAllURIsStatus()"/>
-          <menuitem id="menuitem-fetchurisstatus"    label="&rdfadevSidebar.fetchurisstatus;"    oncommand="rdfaTreeView.getAllURIsStatus()"/>
-          <menuitem id="menuitem-checkwithvapour"    label="&rdfadevSidebar.checkwithvapour;"    oncommand="rdfaTreeView.checkWithVapour()"/>
-          <menuitem id="menuitem-showgraph"          label="&rdfadevSidebar.showgraph;      "    oncommand="rdfaTreeView.showGraph()"/>
-          <menuitem id="menuitem-checkvocabelement"  label="&rdfadevSidebar.checkvocabelement;"  oncommand="rdfaTreeView.checkVocabElements()"/>
-          <menuitem id="menuitem-checkvocabelements" label="&rdfadevSidebar.checkvocabelements;" oncommand="rdfaTreeView.checkVocabElements()"/>
-          <menuitem id="menuitem-getlabel"           label="&rdfadevSidebar.getlabel;"           oncommand="rdfaTreeView.getLabels()"/>
-          <menuitem id="menuitem-getlabels"          label="&rdfadevSidebar.getlabels;"          oncommand="rdfaTreeView.getLabels()"/>
-          <menuitem id="menuitem-opennewtabs"        label="&rdfadevSidebar.opennewtabs;"        oncommand="rdfaTreeView.openSelectedURIs()"/>
-          <menuitem id="menuitem-open"               label="&rdfadevSidebar.open;"               oncommand="rdfaTreeView.openSelectedURI()"/>
-          <menuitem id="menuitem-opennewwindow"      label="&rdfadevSidebar.opennewwindow;"      oncommand="rdfaTreeView.openSelectedURIsNewWindow()"/>
-          <menuitem id="menuitem-opennewtab"         label="&rdfadevSidebar.opennewtab;"         oncommand="rdfaTreeView.openSelectedURIs()"/>
-          <menuitem id="menuitem-source"             label="&rdfadevSidebar.source;"             oncommand="rdfaTreeView.openElementSource()"/>
-          <menuitem id="menuitem-errorsource"        label="&errordevSidebar.source;"            oncommand="errorTreeView.openElementSource()"/>
-          <menuitem id="menuitem-errorbadprefix"     label="&errordevSidebar.badprefix;"         oncommand="errorTreeView.openPrefixNamespaceURI()"/>
-          <menuitem id="menuitem-copy"               label="&rdfadevSidebar.copy;"               oncommand="rdfaTreeView.copySelectedElements()"/>
-          <menuitem id="menuitem-errorcopy"          label="&errordevSidebar.copy;"              oncommand="errorTreeView.copySelectedElements()"/>
-          <menuitem id="menuitem-copytriples"        label="&rdfadevSidebar.copytriples;"        oncommand="rdfaTreeView.copyTriples()"/>
-          <menuitem id="menuitem-copytriple"         label="&rdfadevSidebar.copytriple;"         oncommand="rdfaTreeView.copyTriples()"/>
-          <menuitem id="menu-validatemarkup"         label="&errorSidebar.validatemarkup;"       oncommand="errorTreeView.validateMarkup()"/>
-          <menu     id="menu-treevisualization"      label="&rdfadevSidebar.resourcevisualization;">
-            <menupopup>
-              <menuitem label="&rdfadevSidebar.urispopup;"   type="radio" oncommand="rdfaTreeView.treeVisualization = treeVisualization.URIs;   rdfaTreeView.treeBox.invalidate(); "/>
-              <menuitem label="&rdfadevSidebar.curiespopup;" type="radio" oncommand="rdfaTreeView.treeVisualization = treeVisualization.CURIEs; rdfaTreeView.treeBox.invalidate(); " checked="true"/>
-              <menuitem label="&rdfadevSidebar.labelspopup;" type="radio" oncommand="rdfaTreeView.treeVisualization = treeVisualization.Labels; rdfaTreeView.treeBox.invalidate(); "/>
-            </menupopup>
-          </menu>
-          <menu id="menu-documentvisualization" label="&rdfadevSidebar.documentvisualization;">
-            <menupopup>
-              <menuitem label="&rdfadevSidebar.markuppopup;" 
-                        type="checkbox" oncommand="rdfaTreeView.toggleElementMarkup();
-                                                   errorTreeView.toggleElementMarkup()"       checked="false" />
-              <menuitem label="&rdfadevSidebar.highlightpopup;"
-                        type="checkbox" oncommand="rdfaTreeView.toggleElementHighlighting();
-                                                   errorTreeView.toggleElementHighlighting()" checked="true" />
-            </menupopup>
-          </menu>
-        </popup>
-        <popup id="popup-empty" >
-        </popup>
-
-        <popupset>
-          <menupopup id="textboxpopup">
-            <menuitem label="&rdfadevConsoleTab.copy;"           oncommand="goDoCommand('cmd_copy');"/>
-            <menuitem label="&rdfadevConsoleTab.selectall;"      oncommand="goDoCommand('cmd_selectAll');"/>
-            <menuitem label="&rdfadevConsoleTab.clear;"          oncommand="consoleView.clearConsole();"/>
-            <menuseparator/>
-            <menuitem label="&rdfadevConsoleTab.validateparser;" oncommand="consoleView.validateParser();"/>
-          </menupopup>
-        </popupset>
-
-      </popupset>    
           
       <tabbox id="sidebarTabbox" selectedIndex="0" flex="1">
         <tabs>
