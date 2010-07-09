@@ -3,12 +3,15 @@
   <Description about="urn:mozilla:install-manifest">
     <em:id>rdfadev@fundacionctic.org</em:id>
     <em:type>2</em:type>
-    <em:name>rdfadev</em:name>
-    <em:version>1.0</em:version>
-    <em:creator>Javier Pozueco</em:creator>
-    <em:contributor></em:contributor>
-    <em:description>rdfadev</em:description>
-    <em:aboutURL>chrome://rdfadev/content/about.xul</em:aboutURL>
+    <em:name>RDFa Developer</em:name>
+    <em:description>Displays RDFa triples, errors, warnings and executes SPARQL queries</em:description>
+    <em:version>0.1</em:version>
+    <em:creator>Javier Pozueco (Fundación CTIC)</em:creator>
+    <em:contributor>Diego Berrueta (Fundación CTIC)</em:contributor>
+    <em:contributor>Luis Polo (Fundación CTIC)</em:contributor>
+    <em:contributor>Jose E. Labra (Universidad de Oviedo)</em:contributor>
+    <em:homepageURL>http://rdfadev.sourceforge.net/</em:homepageURL>
+    <!--<em:aboutURL>chrome://rdfadev/content/about.xul</em:aboutURL>-->
     <!--<em:optionsURL>chrome://rdfadev/content/options.xul</em:optionsURL>-->
     <em:targetApplication>
       <Description>
