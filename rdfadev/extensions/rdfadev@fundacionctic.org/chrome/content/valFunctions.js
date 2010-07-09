@@ -1,3 +1,6 @@
+/* see license.txt for terms of usage */
+
+
 /* Declaring Namespaces: http://www.w3.org/TR/1999/REC-xml-names-19990114/#ns-decl */
 
 var CombiningChar = 
