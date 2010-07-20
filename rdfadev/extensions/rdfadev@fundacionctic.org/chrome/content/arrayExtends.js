@@ -1,9 +1,6 @@
 /* see license.txt for terms of usage */
 
 
-/* see license.txt for terms of usage */
-
-
 function uniqueAdd(anArray, anObject) 
 {
   var i = anArray.length;
