@@ -91,8 +91,8 @@
   </popupset>    
 
   <vbox id="appcontent">
-    <splitter id="rdfadevContentSplitter" class="chromeclass-extrachrome" persist="collapsed"/>
-    <vbox id="rdfadevContentBox" class="chromeclass-extrachrome" persist="collapsed">
+    <splitter id="rdfadevContentSplitter" class="chromeclass-extrachrome"/>
+    <vbox id="rdfadevContentBox" class="chromeclass-extrachrome">
 
       <hbox align="center"> 
         <spacer width="2"/> 
