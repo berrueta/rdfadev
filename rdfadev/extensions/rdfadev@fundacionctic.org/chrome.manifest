@@ -1,6 +1,7 @@
 content   rdfadev                 chrome/content/
 skin      rdfadev   classic/1.0   chrome/skin/
 locale    rdfadev   en-US         chrome/locale/en-US/
+locale    rdfadev   es-ES         chrome/locale/es-ES/
 
 
 overlay chrome://browser/content/browser.xul         chrome://rdfadev/content/overlayView.xul

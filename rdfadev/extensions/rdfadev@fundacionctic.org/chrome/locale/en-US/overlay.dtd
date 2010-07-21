@@ -46,5 +46,5 @@
 <!ENTITY rdfadevConsoleTab.copy               "Copy">
 <!ENTITY errorSidebar.validatemarkup          "Validate document markup">
 <!ENTITY sparqlSidebar.showmoreprefixes       "Show more prefixes...">
-<!ENTITY rdfadevSidebar.showgraph             "Show document RDFa Graph">
+<!ENTITY rdfadevSidebar.showgraph             "Show RDFa document Graph">
 <!ENTITY rdfadev.about                        "About RDFa Developer">
