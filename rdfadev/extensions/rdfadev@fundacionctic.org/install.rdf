@@ -3,13 +3,6 @@
   <Description about="urn:mozilla:install-manifest">
     <em:id>rdfadev@fundacionctic.org</em:id>
     <em:type>2</em:type>
-    <em:name>RDFa Developer</em:name>
-    <em:description>Displays RDFa triples, errors, warnings and executes SPARQL queries</em:description>
-    <em:version>1.0b1</em:version>
-    <em:creator>Javier Pozueco (Fundación CTIC)</em:creator>
-    <em:contributor>Diego Berrueta (Fundación CTIC)</em:contributor>
-    <em:contributor>Luis Polo (Fundación CTIC)</em:contributor>
-    <em:contributor>Jose E. Labra (Universidad de Oviedo)</em:contributor>
     <em:homepageURL>http://rdfadev.sourceforge.net/</em:homepageURL>
     <em:targetApplication>
       <Description>
@@ -18,5 +11,28 @@
         <em:maxVersion>3.*</em:maxVersion>
       </Description>
     </em:targetApplication>
+    <em:localized>
+      <Description>
+        <em:locale>en-US</em:locale>
+        <em:description>Displays RDF triples, errors, warnings and executes SPARQL queries</em:description>
+        <em:creator>Javier Pozueco (Fundación CTIC)</em:creator>
+        <em:contributor>Diego Berrueta (Fundación CTIC)</em:contributor>
+        <em:contributor>Luis Polo (Fundación CTIC)</em:contributor>
+        <em:contributor>Jose E. Labra (Universidad de Oviedo)</em:contributor>
+        <em:name>RDFa Developer</em:name>
+      </Description>
+    </em:localized>
+    <em:localized>
+      <Description>
+        <em:locale>es-ES</em:locale>
+        <em:description>Muestra las tripletas RDF, errores, warnings y permite ejecutar consultas SPARQL</em:description>
+        <em:creator>Javier Pozueco (Fundación CTIC)</em:creator>
+        <em:contributor>Diego Berrueta (Fundación CTIC)</em:contributor>
+        <em:contributor>Luis Polo (Fundación CTIC)</em:contributor>
+        <em:contributor>Jose E. Labra (Universidad de Oviedo)</em:contributor>
+        <em:name>RDFa Developer</em:name>
+      </Description>
+    </em:localized>
+    <em:version>1.0b1</em:version>
   </Description>
 </RDF>

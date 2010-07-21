@@ -11,7 +11,7 @@
 <!ENTITY rdfadevSidebar.resourcevisualization "Visualización de recursos">
 <!ENTITY rdfadevSidebar.open                  "Abrir enlace">
 <!ENTITY rdfadevSidebar.opennewwindow         "Abrir enlace en una ventana nueva">
-<!ENTITY rdfadevSidebar.opennewtab            "Abrir enlace en una pestaña nueva"
+<!ENTITY rdfadevSidebar.opennewtab            "Abrir enlace en una pestaña nueva">
 <!ENTITY rdfadevSidebar.opennewtabs           "Abrir enlaces en pestañas">
 <!ENTITY rdfadevSidebar.copy                  "Copiar">
 <!ENTITY rdfadevSidebar.expandall             "Expandir todo">
