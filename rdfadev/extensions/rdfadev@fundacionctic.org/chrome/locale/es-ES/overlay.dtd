@@ -5,13 +5,13 @@
 <!ENTITY rdfadevSidebar.consoletab            "Consola">
 <!ENTITY rdfadevSidebar.urispopup             "URIs">
 <!ENTITY rdfadevSidebar.curiespopup           "CURIEs">
-<!ENTITY rdfadevSidebar.labelspopup           "Labels">
+<!ENTITY rdfadevSidebar.labelspopup           "Etiquetas">
 <!ENTITY rdfadevSidebar.rdfatreetriplesheader "Tripletas">
 <!ENTITY rdfadevSidebar.rdfatreenumberheader  "Numero de hijos">
 <!ENTITY rdfadevSidebar.resourcevisualization "Visualización de recursos">
 <!ENTITY rdfadevSidebar.open                  "Abrir enlace">
 <!ENTITY rdfadevSidebar.opennewwindow         "Abrir enlace en una ventana nueva">
-<!ENTITY rdfadevSidebar.opennewtab            "Abrir enlace en una pestaña pestaña"
+<!ENTITY rdfadevSidebar.opennewtab            "Abrir enlace en una pestaña nueva"
 <!ENTITY rdfadevSidebar.opennewtabs           "Abrir enlaces en pestañas">
 <!ENTITY rdfadevSidebar.copy                  "Copiar">
 <!ENTITY rdfadevSidebar.expandall             "Expandir todo">
@@ -36,8 +36,8 @@
 <!ENTITY sparqlSidebar.showPrefixes           "Mostrar más prefijos">
 <!ENTITY sparqlSidebar.service                "Servicio SPARQL:">
 <!ENTITY sparqlSidebar.query                  "Consulta:">
-<!ENTITY sparqlSidebar.results                "Resultados">
-<!ENTITY errorSidebar.treeHeader              "Mesnajes:">
+<!ENTITY sparqlSidebar.results                "Resultados:">
+<!ENTITY errorSidebar.treeHeader              "Mensajes:">
 <!ENTITY rdfadevToolbarButton.label           "RDFa Developer">
 <!ENTITY rdfadevToolbarButton.tooltiptext     "RDFa Developer">
 <!ENTITY rdfadevConsoleTab.selectall          "Seleccionar todo">
@@ -46,5 +46,5 @@
 <!ENTITY rdfadevConsoleTab.copy               "Copiar">
 <!ENTITY errorSidebar.validatemarkup          "Validar marcado del documento">
 <!ENTITY sparqlSidebar.showmoreprefixes       "Mostrar más prefijos...">
-<!ENTITY rdfadevSidebar.showgraph             "Mostrar grafo RDFa del document">
+<!ENTITY rdfadevSidebar.showgraph             "Mostrar grafo RDFa del documento">
 <!ENTITY rdfadev.about                        "Acerca de RDFa Developer">
