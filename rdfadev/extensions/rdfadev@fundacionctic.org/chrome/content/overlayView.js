@@ -39,6 +39,10 @@ function onBottomBarClick(event)
     popup.appendChild(menuItemAbout);
 
     popup.openPopupAtScreen(event.screenX, event.screenY, true);
+	
+	event.stopPropagation();
+    event.preventDefault();
+	
   }
   else
   {
