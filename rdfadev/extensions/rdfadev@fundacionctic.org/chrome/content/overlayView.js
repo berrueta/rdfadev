@@ -67,10 +67,28 @@ function toggleBottomBar()
 
 function showAbout()
 {
-  var ExtensionManager = Components.classes["@mozilla.org/extensions/manager;1"].getService(Components.interfaces.nsIExtensionManager);
-  var datasource       = ExtensionManager.datasource;
 
-  window.openDialog("chrome://mozapps/content/extensions/about.xul", "", "chrome,centerscreen,modal", "urn:mozilla:item:rdfadev@fundacionctic.org", datasource);
+  try
+  {
+    Components.utils.import("resource://gre/modules/AddonManager.jsm");
+  }
+  catch (err)
+  {
+  }
+
+  if(typeof(AddonManager) != "undefined")
+  {
+    AddonManager.getAddonByID("rdfadev@fundacionctic.org", function(addon) { openDialog("chrome://mozapps/content/extensions/about.xul", "", "chrome,centerscreen,modal", addon); });
+  }
+  // firefox 3.6 compatibility
+  else
+  {
+    var ExtensionManager = Components.classes["@mozilla.org/extensions/manager;1"].getService(Components.interfaces.nsIExtensionManager);
+    var datasource       = ExtensionManager.datasource;
+
+    window.openDialog("chrome://mozapps/content/extensions/about.xul", "", "chrome,centerscreen,modal", "urn:mozilla:item:rdfadev@fundacionctic.org");
+  }
+
 }
-
+  
 window.addEventListener("load", rdfadev.onFirefoxLoad, false);
