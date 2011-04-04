@@ -37,7 +37,7 @@
 <!ENTITY sparqlSidebar.service                "Servicio SPARQL:">
 <!ENTITY sparqlSidebar.query                  "Consulta:">
 <!ENTITY sparqlSidebar.results                "Resultados:">
-<!ENTITY errorSidebar.treeHeader              "Mensajes:">
+<!ENTITY errorSidebar.treeHeader              "Mensajes">
 <!ENTITY rdfadevToolbarButton.label           "RDFa Developer">
 <!ENTITY rdfadevToolbarButton.tooltiptext     "RDFa Developer">
 <!ENTITY rdfadevConsoleTab.selectall          "Seleccionar todo">
