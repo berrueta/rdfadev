@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+
+<project name="RDFaDev" default="all">
+
+    <taskdef resource="net/sf/antcontrib/antcontrib.properties" />
+    
+    <property environment="env"/>    
+    <property name="NAME" value="rdfadev" />
+    <property name="VERSION" value="1.0b3" />
+    <property name="FIREFOX" value="/usr/bin/iceweasel" />
+    
+    <target name="all" depends="xpi" />
+
+    <target name="prepare" depends="clean">
+        <mkdir dir="build"/>
+    </target>
+    
+    <target name="clean">
+        <delete dir="build" />
+        <delete file="**/*~" /> 
+    </target>
+
+    <target name="install" depends="xpi">
+        <exec executable="${FIREFOX}">
+            <arg line="build/${NAME}-${VERSION}.xpi" />
+        </exec>
+    </target>
+    
+    <target name="xpi" depends="prepare">
+        <zip destfile="build/${NAME}-${VERSION}.xpi">
+            <fileset dir=".">
+                <include name="chrome/**" />
+                <include name="defaults/**" />
+                <include name="chrome.manifest" />
+                <include name="install.rdf" />
+                <include name="license.txt" />
+                <exclude name="build.xml" />
+            </fileset>
+        </zip>
+    </target>
+    
+</project>
+
