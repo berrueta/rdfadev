@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <RDF xmlns="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:em="http://www.mozilla.org/2004/em-rdf#">
   <Description about="urn:mozilla:install-manifest">
+    <em:version>1.1</em:version>
     <em:id>rdfadev@fundacionctic.org</em:id>
     <em:type>2</em:type>
     <em:homepageURL>http://rdfadev.sourceforge.net/</em:homepageURL>
@@ -13,27 +14,27 @@
     </em:targetApplication>
     <em:localized>
       <Description>
+        <em:name>RDFa Developer</em:name>
         <em:locale>en-US</em:locale>
-        <em:description>Displays RDF triples, errors, warnings and executes SPARQL queries</em:description>
+        <em:description>Displays RDF triples, errors, warnings and executes SPARQL queries over RDFa markup</em:description>
         <em:creator>Javier Pozueco</em:creator>
         <em:contributor>Diego Berrueta (Fundación CTIC)</em:contributor>
         <em:contributor>Luis Polo (Fundación CTIC)</em:contributor>
         <em:contributor>Jose E. Labra (Universidad de Oviedo)</em:contributor>
-        <em:name>RDFa Developer</em:name>
+        <em:contributor>Sergio Fernandez (Fundación CTIC)</em:contributor>
       </Description>
     </em:localized>
     <em:localized>
       <Description>
+        <em:name>RDFa Developer</em:name>
         <em:locale>es-ES</em:locale>
-        <em:description>Muestra las tripletas RDF, errores, warnings y permite ejecutar consultas SPARQL</em:description>
+        <em:description>Muestra las tripletas RDF, errores, warnings y permite ejecutar consultas SPARQL sobre marcado RDFa</em:description>
         <em:creator>Javier Pozueco</em:creator>
         <em:contributor>Diego Berrueta (Fundación CTIC)</em:contributor>
         <em:contributor>Luis Polo (Fundación CTIC)</em:contributor>
         <em:contributor>Jose E. Labra (Universidad de Oviedo)</em:contributor>
-        <em:contributor>Sergio Fernández (Fundación CTIC)</em:contributor>
-        <em:name>RDFa Developer</em:name>
+        <em:contributor>Sergio Fernandez (Fundación CTIC)</em:contributor>
       </Description>
     </em:localized>
-    <em:version>1.1</em:version>
   </Description>
 </RDF>
