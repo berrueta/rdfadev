@@ -6,7 +6,7 @@
     
     <property environment="env"/>    
     <property name="NAME" value="rdfadev" />
-    <property name="VERSION" value="1.1" />
+    <property name="VERSION" value="1.1.1" />
     <property name="FIREFOX" value="/usr/bin/iceweasel" />
     
     <target name="all" depends="xpi" />
