@@ -218,7 +218,7 @@ function execute(documento)
     return;
   }
 
-  if(documento.xmlVersion == null)
+  if(documento.implementation.hasFeature("XMLVersion", null) == null)
   {
     errores_elemento.push({code: parserError.xmlDeclaration});
   }
