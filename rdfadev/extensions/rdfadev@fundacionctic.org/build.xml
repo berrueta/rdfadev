@@ -12,7 +12,22 @@
     <target name="all" depends="xpi" />
 
     <target name="prepare" depends="clean">
-        <mkdir dir="build"/>
+        <mkdir dir="build" />
+		<copy todir="build">
+            <fileset dir=".">
+                <include name="chrome/**" />
+                <include name="defaults/**" />
+                <include name="chrome.manifest" />
+                <include name="install.rdf" />
+                <include name="license.txt" />
+                <exclude name="build.xml" />
+            </fileset>
+  		</copy>
+	    <replace 
+			file="build/install.rdf"
+			token="__VERSION__"
+			value="${VERSION}"
+		/>
     </target>
     
     <target name="clean">
@@ -28,7 +43,7 @@
     
     <target name="xpi" depends="prepare">
         <zip destfile="build/${NAME}-${VERSION}.xpi">
-            <fileset dir=".">
+            <fileset dir="build">
                 <include name="chrome/**" />
                 <include name="defaults/**" />
                 <include name="chrome.manifest" />

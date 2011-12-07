@@ -8,7 +8,7 @@
     <em:name>RDFa Developer</em:name>
     <em:description>Displays RDF triples, errors, warnings and executes SPARQL queries over RDFa markup</em:description>
     <em:id>rdfadev@fundacionctic.org</em:id>
-    <em:version>1.1</em:version>
+    <em:version>__VERSION__</em:version>
     <em:type>2</em:type>
     <em:homepageURL>http://rdfadev.sourceforge.net/</em:homepageURL>
 
